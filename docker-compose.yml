@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 7447:7447
+    working_dir: /root
+    stdin_open: true
+    tty: true

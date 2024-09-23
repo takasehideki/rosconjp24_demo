@@ -10,6 +10,17 @@
 
 ローカル側とサーバ側の双方で準備が必要です．
 
+### ローカル側の環境構築
+
+Docker環境を利用します．
+Zenoh通信用のポート `7447` をホストとバインドしており，Linux以外のOSでも動作可能と思われます（発表時にはmacOSを利用）．
+
+- イメージのビルド： `docker compose build`
+- コンテナの起動： `docker compose up -d`
+- コンテナの終了： `docker compose down`
+
+以降のローカル側での実行手順は `docker compose exec app bash` によってコンテナに入ったシェル内での操作として示します．
+
 ### サーバ側の環境構築
 
 発表者はMS Azureを使っていますが，他のクラウドサービス等でも同じように準備可能と思われます．
@@ -26,4 +37,3 @@
 - `sudo apt install ros-rolling-rmw-cyclonedds-cpp terminator`
 - [rmw_zenoh](https://github.com/ros2/rmw_zenoh) のソースビルド
 - [zenoh](https://github.com/eclipse-zenoh/zenoh/releases/tag/1.0.0-beta.3) と [zenoh-plugin-ros2dds Release 1.0.0-beta.3](https://github.com/eclipse-zenoh/zenoh-plugin-ros2dds/releases/tag/1.0.0-beta.3) の `-gnu-debian.zip` をDL&unzipして `sudo apt install ./*.deb`
-
