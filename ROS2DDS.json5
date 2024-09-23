@@ -52,22 +52,10 @@
       ////               or is not specified at all, it means that NO such interface is allowed.
       ////               Use 'deny' to allow all except the specified interfaces. If an interface type is set to an empty list
       ////               or is not specified at all, it means that ALL such interface are allowed.
-      // allow: {
-      //   publishers: [".*/laser_scan", "/tf", ".*/pose"],
-      //   subscribers: [".*/cmd_vel"],
-      //   service_servers: [".*/.*_parameters"],
-      //   service_clients: [],
-      //   action_servers: [".*/rotate_absolute"],
-      //   action_clients: [],
-      // },
-      // deny: {
-      //   publishers: ["/rosout", "/parameter_events"],
-      //   subscribers: ["/rosout"],
-      //   service_servers: [".*/set_parameters"],
-      //   service_clients: [".*/set_parameters"],
-      //   action_servers: [],
-      //   action_clients: [],
-      // },
+      allow: {
+        publishers: ["/turtle1/cmd_vel"],
+        subscribers: ["/turtle1/pose"],
+      },
 
       ////
       //// pub_max_frequencies: Specify a list of maximum frequency of publications routing over zenoh for a set of Publishers.
