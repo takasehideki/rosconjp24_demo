@@ -3,8 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - .:/root/rosconjp24
     ports:
       - 7447:7447
-    working_dir: /root
+    working_dir: /root/rosconjp24
     stdin_open: true
     tty: true
